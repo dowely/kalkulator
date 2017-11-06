@@ -1,0 +1,138 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+#obudowa {
+	margin: 25px auto;
+	width: 320px;
+	height: 430px;
+	border: 2px solid #607880;
+	background-color: #343838;
+	border-radius: 15px;
+}
+#wyswietlacz {
+	margin: 20px 20px 25px;
+	height: 80px;
+	border: 2px groove black;
+	box-shadow: 0 0 5px black inset;
+	border-radius: 8px;
+	font-size: 40px;
+	font-family: Calibri;
+	padding-right: 10px;
+	
+	text-align: right;
+	line-height: 80px;
+	background-color: #D4E594;
+}
+#spacer {
+	display: flex;
+	align-items: center;
+	border: 2px dashed transparent;
+}
+#logo {
+	flex: 1;
+	margin-left: 20px;
+	margin-right: 40px;
+	border-bottom: 2px solid white;
+	padding: 0px 0px;
+	font-size: 25px;
+	font-family: Cambria;
+	letter-spacing: 3px;
+	font-weight: bold;
+	color: white;
+}
+#solar {
+	display: flex;
+	justify-content: center;
+	width: 100px;
+	height: 25px;
+	margin-right: 20px;
+	margin-left: 20px;
+	border: 2px ridge black;
+	box-shadow: 0 0 5px black inset;
+	border-radius: 4px;
+	flex: 1;
+	background-color: #AF9884;
+}
+#solar div {
+	flex: 1;
+	margin-left: 1px;
+	margin-right: 1px;
+	background-color: #62422C;
+}
+#guziki {
+	display: flex;
+	margin: 20px 10px;
+}
+#guziki_1 {
+	flex: 3;
+	display: flex;
+	flex-wrap: wrap-reverse;
+	border: 2px dashed transparent;
+	justify-content: space-around;
+	
+}
+#guziki_1 button:first-child {
+	width: 107px;
+}
+#guziki_1 button {
+	background-color: #88898C;
+	font-family: Verdana;
+	font-size: 25px;
+	color: white;
+	border: none;
+	border-radius: 5px;
+}
+#guziki_2 {
+	flex: 1;
+	display: flex;
+	flex-wrap: wrap-reverse;
+	border: 2px dashed transparent;
+	justify-content: space-around;
+}
+#guziki_2 button {
+	background-color: #5B5B74;
+	font-family: Verdana;
+	font-size: 25px;
+	color: white;
+	border: none;
+	border-radius: 5px;
+}
+#guziki_3 {
+	flex: 1;
+	display: flex;
+	flex-wrap: wrap;
+	border: 2px dashed transparent;
+	justify-content: space-around;
+}
+#guziki_3 button:last-child {
+	height: 106px;
+	background-color: #F2A53C;
+	font-family: Verdana;
+	font-size: 25px;
+	color: white;
+	border: none;
+	border-radius: 5px;
+}
+#guziki_3 button:nth-child(2) {
+	background-color: #378BE0;
+	font-family: Verdana;
+	font-size: 25px;
+	color: white;
+	border: none;
+	border-radius: 5px;
+}
+#guziki_3 button:first-child {
+	background-color: #D64D33;
+	font-family: Verdana;
+	font-size: 25px;
+	color: white;
+	border: none;
+	border-radius: 5px;
+}
+.btn {
+	width: 50px;
+	height: 50px;
+	margin: 3px 0px;
+}

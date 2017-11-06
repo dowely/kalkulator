@@ -1,0 +1,123 @@
+
+window.sessionStorage.bufor = '0';
+window.sessionStorage.wynik = '0';
+window.sessionStorage.operator = '';
+
+function klik(btn){
+	
+	if (sessionStorage.bufor === '0' && btn.innerHTML !== '.') sessionStorage.bufor = btn.innerHTML;
+	else if (sessionStorage.bufor.indexOf('.') != -1 && btn.innerHTML === '.') return;
+	else sessionStorage.bufor += btn.innerHTML;
+	var ekran = document.getElementById('wyswietlacz');
+	ekran.innerHTML = sessionStorage.bufor;
+	
+	//document.getElementById('memory').innerHTML = sessionStorage.bufor.length; 
+}
+
+function backspace() {
+	
+	var txt = sessionStorage.bufor;
+	var txtSliced = '';
+	if (txt === '0') return;
+	else if (txt.length === 1) txtSliced = '0';
+	else txtSliced = txt.substr(0,txt.length - 1);
+	sessionStorage.bufor = txtSliced;
+	var ekran = document.getElementById('wyswietlacz');
+	ekran.innerHTML = sessionStorage.bufor;
+	  
+	//document.getElementById('memory').innerHTML = sessionStorage.bufor.length;
+	
+}
+
+function operand(btn){
+	
+	var bufor = parseFloat(sessionStorage.bufor);
+	var wynik = parseFloat(sessionStorage.wynik);
+	var ekran = document.getElementById('wyswietlacz');
+	
+	switch(sessionStorage.operator){
+		case '+':
+		  wynik += bufor;
+		  break;
+		case '-':
+		  wynik -= bufor;
+		  break;
+		case '/':
+		  wynik /= bufor;
+		  break;
+		case 'x':
+		  wynik *= bufor;
+		  break;  
+		default:
+		  wynik = bufor;
+	}	
+	
+	sessionStorage.bufor = '0';
+	
+	var precision = (wynik.toString().indexOf('.') !== -1) ? wynik.toString().split(".")[1].length : 0;
+	if (precision < 10 && precision > 0) sessionStorage.wynik = wynik.toFixed(precision);
+	else if (precision === 0) sessionStorage.wynik = wynik.toFixed();
+	else sessionStorage.wynik = wynik.toFixed(10).replace(/0+$/,"");
+	
+	ekran.innerHTML = sessionStorage.wynik;
+	
+	switch(btn.innerHTML){
+		case '+':
+		  sessionStorage.operator = '+';
+		  break;
+		case '-':
+		  sessionStorage.operator = '-';
+		  break;
+		case '/':
+		  sessionStorage.operator = '/';
+		  break;
+		case 'x':
+		  sessionStorage.operator = 'x';
+		  break;
+		default:
+		  ekran.innerHTML = 'lipa';
+	}
+	
+	/*document.getElementById('memory').innerHTML = "Bufor wynosi: " + bufor + "<br>" + "Wynik to: " + wynik + "<br>" + sessionStorage.wynik + "<br>" + precision;*/
+}
+
+function erase() {
+    document.getElementById('wyswietlacz').innerHTML = '0';
+    window.sessionStorage.bufor = '0';
+    window.sessionStorage.wynik = '0';
+    window.sessionStorage.operator = '';
+}
+
+function equalTo(){
+	
+    var bufor = parseFloat(sessionStorage.bufor);
+	var wynik = parseFloat(sessionStorage.wynik);
+	var ekran = document.getElementById('wyswietlacz');
+	
+	switch(sessionStorage.operator){
+		case '+':
+		  wynik += bufor;
+		  break;
+		case '-':
+		  wynik -= bufor;
+		  break;
+		case '/':
+		  wynik /= bufor;
+		  break;
+		case 'x':
+		  wynik *= bufor;
+		  break;  
+		default:
+		  wynik = bufor;
+	}	
+	
+	sessionStorage.bufor = '0';
+	sessionStorage.operator = '';
+	
+	var precision = (wynik.toString().indexOf('.') !== -1) ? wynik.toString().split(".")[1].length : 0;
+	if (precision < 10 && precision > 0) sessionStorage.wynik = wynik.toFixed(precision);
+	else if (precision === 0) sessionStorage.wynik = wynik.toFixed();
+	else sessionStorage.wynik = wynik.toFixed(10).replace(/0+$/,"");
+	
+	ekran.innerHTML = sessionStorage.wynik;
+}
