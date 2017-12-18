@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <title>Kalkulator</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="kalkulator.css">
+  <script src="kalkulator.js"></script>
+</head>
+<body>
+<div id="obudowa">
+  <div id="wyswietlacz">
+  0
+  </div>
+  <div id="spacer">
+    <div id="logo">
+      CASIO
+    </div>
+    <div id="solar">
+		<div id="cellDivider"></div>
+		<div id="cellDivider"></div>
+		<div id="cellDivider"></div>
+		<div id="cellDivider"></div>
+    </div>
+  </div>
+  <div id="guziki">
+    <div id="guziki_1">
+	  <button class="cyfry btn" type="button" onclick="klik(this)">0</button>
+	  <button class="cyfry btn" type="button" onclick="klik(this)">.</button>
+	  <button class="cyfry btn" type="button" onclick="klik(this)">1</button>
+	  <button class="cyfry btn" type="button" onclick="klik(this)">2</button>
+	  <button class="cyfry btn" type="button" onclick="klik(this)">3</button>
+	  <button class="cyfry btn" type="button" onclick="klik(this)">4</button>
+	  <button class="cyfry btn" type="button" onclick="klik(this)">5</button>
+	  <button class="cyfry btn" type="button" onclick="klik(this)">6</button>
+	  <button class="cyfry btn" type="button" onclick="klik(this)">7</button>
+	  <button class="cyfry btn" type="button" onclick="klik(this)">8</button>
+	  <button class="cyfry btn" type="button" onclick="klik(this)">9</button>
+	  
+	</div>
+	<div id="guziki_2">
+	  <button class="dzialania btn" type="button" onclick="operand(this)">+</button>
+	  <button class="dzialania btn" type="button" onclick="operand(this)">-</button>
+	  <button class="dzialania btn" type="button" onclick="operand(this)">/</button>
+	  <button class="dzialania btn" type="button" onclick="operand(this)">x</button>
+	</div>
+    <div id="guziki_3">
+	  <button class="edycja btn" type="button" onclick="erase()">CE</button>
+	  <button class="edycja btn" type="button" onclick="backspace()"><--</button>
+	  <button class="edycja btn" type="button" onclick="equalTo()">=</button>
+	</div>
+  </div>
+</div>
+<!--<p id="memory">Session Storage: </p>-->
+</body>
+</html>
